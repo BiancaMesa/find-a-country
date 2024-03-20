@@ -1,4 +1,7 @@
 import '../scss/App.scss'; 
+import '../scss/components/Header.scss'; 
+import '../scss/components/Main.scss'; 
+import '../scss/components/Filters.scss'; 
 import {useState} from 'react'; 
 import dataCountries from '../services/data.json';
 import CountriesList from './CountriesList';
@@ -26,23 +29,18 @@ function App() {
     return country.continents.includes(valueSearchContinent); 
   }); 
 
-  // if(valueSearchContinent==='') {
-  //   <CountriesList dataCountriesListM={filteredCountriesByCountry}/>
-  // } else {
-  //   <CountriesList dataCountriesListM={filteredCountriesByContinent}/>
-  // }
 
 
   return (
     <>
-      <header>
+      <header className='header'>
         <h1>Country Info App</h1>
-        <h4>Explore information about countries, capitals and flags. Add new countries and filter through the list!</h4>
+        <h6>Explore information about countries, capitals and flags. Add new countries and filter through the list!</h6>
       </header>
 
-      <main>
-        <div>
-          <h4>Filters</h4>
+      <main className='main'>
+        <div className='filters'>
+          <h3>Filters</h3>
           <FilterByCountry onChangeInputCountry={handleChangeInputCountry}/>
           <FilterByContinent onChangeSelectContinent={handleChangeSearchContinent}/>
         </div>
