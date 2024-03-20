@@ -2,8 +2,16 @@
     // display: flex; 
     // flex-direction: column;
     text-align: center;
-    padding: 30px 20px 40px 20px;
+    padding: 40px 20px 50px 20px;
     background-color: rgb(194, 220, 204);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: rgb(51, 52, 52); 
+
+    &__title {
+        margin-bottom: 10px; 
+    }
+
+    &__subtitle {
+        color: rgb(80, 81, 81); 
+    }
 }

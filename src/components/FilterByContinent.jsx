@@ -10,9 +10,9 @@ function FilterByContinent({onChangeSelectContinent}) {
     //me estaba dando error esto porque el value lo estaba poniendo todo en minusculas y con guiones, porqué?
 
   return (
-    <div> 
+    <div className='filters__continent'> 
         <label htmlFor="continent">By Continent</label>
-        <select name="continent" id="continent" onChange={handleSelectContinent}>
+        <select className='filters__continent--select' name="continent" id="continent" onChange={handleSelectContinent}>
             <option value="">All</option>
             <option value="Africa">Africa</option>
             <option value="North America">North America</option>

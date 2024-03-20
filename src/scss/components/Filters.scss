@@ -1,6 +1,23 @@
 .filters {
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: space-around;
+    display: flex;
+    //justify-content: space-around;
+    align-self: center;
     margin-bottom: 20px; 
+    padding: 10px; 
+    border: 1px solid rgb(137, 144, 137); 
+    border-radius: 10px;
+    color: rgb(123, 132, 134); 
+    box-shadow: 0.5px 0.8px 0.5px rgb(211, 211, 211/ 0.2);
+
+    &__title {
+        margin: 0 40px 0 10px; 
+    }
+
+    &__country--input {
+        margin: 0 30px 0 10px; 
+    }
+
+    &__continent--select {
+        margin: 0 20px 0 10px; 
+    }
 }

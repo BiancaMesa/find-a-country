@@ -57,14 +57,14 @@ function App() {
   return (
     <>
       <header className='header'>
-        <h1>Country Info App</h1>
-        <h6>Explore information about countries, capitals and flags. Add new countries and filter through the list!</h6>
+        <h1 className='header__title'>Country Info App</h1>
+        <h6 className='header__subtitle'>Explore information about countries, capitals and flags. Add new countries and filter through the list!</h6>
         {/* <AddCountryForm onChange={handleName}/> */}
       </header>
 
       <main className='main'>
         <div className='filters'>
-          <h3>Filters</h3>
+          <h3 className='filters__title'>Filters</h3>
           <FilterByCountry onChangeInputCountry={handleChangeInputCountry}/>
           <FilterByContinent onChangeSelectContinent={handleChangeSearchContinent}/>
         </div>
