@@ -1,13 +1,21 @@
 .country {
-    border: 0.4px solid rgb(210, 198, 198); 
+    //border: 0.4px solid rgb(210, 198, 198); 
+    border: 0.4px solid rgb(75, 73, 73); 
     width: 200px; 
-    //text-align: center;
-    border-radius: 10px;
-    padding: 10px 0 10px 0; 
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    border-radius: 10px;
+    padding: 10px 0 10px 0; 
+
+    background-color: white;
+    opacity: 0.8; 
+    
+
+    // background-image: url('./src/images/beach.jpg');
+    // background-size:cover ;
+    // color: white; 
 
     &__line {
         border-bottom: 0.3px solid rgb(121, 119, 119); 
@@ -20,7 +28,7 @@
     //background-color: rgb(217, 201, 201); //Connie
     background-color: #cce1f6; //baby blue
     //color: rgb(113, 118, 120); 
-    color: white; 
+    //color: white; 
     //transform: scale(1.1);
     border: 1px solid lightgray;
 

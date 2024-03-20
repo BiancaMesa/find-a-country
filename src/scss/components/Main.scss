@@ -1,6 +1,10 @@
 .main {
     display: flex;
     flex-direction: column;
-    padding-left: 20px; 
-    margin-top: 20px; 
+    //padding-left: 20px; 
+    //margin-top: 20px; 
+
+    background-image: url('./src/images/tree.jpg');
+    background-size: cover;
+    background-position: 20%;
 }
