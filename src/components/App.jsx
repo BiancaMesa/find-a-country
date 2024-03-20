@@ -24,7 +24,13 @@ function App() {
 
   const filteredCountriesByContinent = dataCountries.filter((country) => {
     return country.continents.includes(valueSearchContinent); 
-  })
+  }); 
+
+  // if(valueSearchContinent==='') {
+  //   <CountriesList dataCountriesListM={filteredCountriesByCountry}/>
+  // } else {
+  //   <CountriesList dataCountriesListM={filteredCountriesByContinent}/>
+  // }
 
 
   return (
@@ -40,7 +46,12 @@ function App() {
           <FilterByCountry onChangeInputCountry={handleChangeInputCountry}/>
           <FilterByContinent onChangeSelectContinent={handleChangeSearchContinent}/>
         </div>
-        <CountriesList dataCountriesListM={filteredCountriesByContinent}/>
+
+        {valueSearchContinent==='' 
+          ? <CountriesList dataCountriesListM={filteredCountriesByCountry}/>
+          : <CountriesList dataCountriesListM={filteredCountriesByContinent}
+        />}
+
       </main>
     </>
   );
