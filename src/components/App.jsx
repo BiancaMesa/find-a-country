@@ -3,18 +3,29 @@ import {useState} from 'react';
 import dataCountries from '../services/data.json';
 import CountriesList from './CountriesList';
 import FilterByCountry from './FilterByCountry';
+import FilterByContinent from './FilterByContinent';
 
 function App() {
 
-  const [valueInputCountry, setValueInputCountry] = useState('');
+  const [valueSearchCountry, setValueSearchCountry] = useState('');
+  const [valueSearchContinent, setValueSearchContinent] = useState('');
 
   const handleChangeInputCountry = (value) => {
-    setValueInputCountry(value);
+    setValueSearchCountry(value);
   };
 
   const filteredCountriesByCountry = dataCountries.filter((country) => {
-    return country.name.official.toLowerCase().includes(valueInputCountry.toLowerCase()); //como me devuelve el pais si le estoy diciendo que me devuelva el nombre no? o es devuelveme el pais que cumpla con esta condicion??
+    return country.name.official.toLowerCase().includes(valueSearchCountry.toLowerCase()); //como me devuelve el pais si le estoy diciendo que me devuelva el nombre no? o es devuelveme el pais que cumpla con esta condicion??
   });
+
+  const handleChangeSearchContinent = (value) => {
+    setValueSearchContinent(value);
+  };
+
+  const filteredCountriesByContinent = dataCountries.filter((country) => {
+    return country.continents.includes(valueSearchContinent); 
+  })
+
 
   return (
     <>
@@ -27,8 +38,9 @@ function App() {
         <div>
           <h4>Filters</h4>
           <FilterByCountry onChangeInputCountry={handleChangeInputCountry}/>
+          <FilterByContinent onChangeSelectContinent={handleChangeSearchContinent}/>
         </div>
-        <CountriesList dataCountriesListM={filteredCountriesByCountry}/>
+        <CountriesList dataCountriesListM={filteredCountriesByContinent}/>
       </main>
     </>
   );
