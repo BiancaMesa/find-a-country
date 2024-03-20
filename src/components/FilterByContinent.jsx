@@ -20,6 +20,7 @@ function FilterByContinent({onChangeSelectContinent}) {
             <option value="Europe">Europe</option>
             <option value="Asia">Asia</option>
             <option value="Oceania">Oceania</option>
+            <option value="Antarctica">Antarctica</option>
         </select>
     </div>
   );

@@ -10,7 +10,7 @@ function FilterByCountry({onChangeInputCountry}) {
   return (
     <div>
         <label htmlFor="country">By Country</label>
-        <input type="text" placeholder="Spain..." id="country" onChange={handleInputCountry}/>
+        <input type="text" id="country" placeholder="Spain..." onChange={handleInputCountry}/>
     </div>
   );
 }
