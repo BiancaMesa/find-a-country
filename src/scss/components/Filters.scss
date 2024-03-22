@@ -30,4 +30,8 @@
         border-radius: 8px;
         border: 1px solid black; 
     }
+
+    &__continent--select:hover {
+        cursor: pointer; 
+    }
 }
