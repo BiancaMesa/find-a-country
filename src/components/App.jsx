@@ -91,13 +91,15 @@ function App() {
       <header className='header'>
         <h1 className='header__title'>Find a Country</h1>
         <h6 className='header__subtitle'>Explore information about countries, capitals and flags. Add new countries and filter through the list!</h6>
-        <AddCountryForm 
-          onChangeName={handleName} 
-          onChangeCapital={handleCapital} 
-          onChangeFlag={handleFlag} 
-          onChangeContinent={handleContinent} 
-          onSubmit={handleAddNewCountry}
-        />
+        <div className='header__addNewCountry'>
+          <AddCountryForm 
+            onChangeName={handleName} 
+            onChangeCapital={handleCapital} 
+            onChangeFlag={handleFlag} 
+            onChangeContinent={handleContinent} 
+            addCountry={handleAddNewCountry}
+          />
+        </div>
       </header>
 
       <main className='main'>

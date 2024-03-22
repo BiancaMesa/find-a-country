@@ -1,6 +1,7 @@
 .filters {
     display: flex;
     align-self: center;
+    //justify-content: center;
     margin: 30px 0 30px 0; 
     padding: 10px; 
     color: rgb(123, 132, 134); 
@@ -15,6 +16,9 @@
 
     &__country--input {
         margin: 0 30px 0 10px; 
+        padding: 5px 0 5px 5px; 
+        border-radius: 4px;
+        border: 1px solid black; 
     }
 
     &__continent--select {
@@ -22,5 +26,8 @@
         color: rgb(109, 106, 109); 
         border: 1px solid rgb(133, 130, 133); 
         border-radius: 4px;
+        padding: 5px 0 5px 0; 
+        border-radius: 8px;
+        border: 1px solid black; 
     }
 }
