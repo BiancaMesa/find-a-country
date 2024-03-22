@@ -2,6 +2,7 @@ import '../scss/App.scss';
 import '../scss/components/Header.scss'; 
 import '../scss/components/Main.scss'; 
 import '../scss/components/Filters.scss'; 
+import '../scss/components/Footer.scss'; 
 import {useState} from 'react'; 
 import dataCountries from '../services/data.json';
 import CountriesList from './CountriesList';
@@ -57,7 +58,7 @@ function App() {
   return (
     <>
       <header className='header'>
-        <h1 className='header__title'>Country Info App</h1>
+        <h1 className='header__title'>Find a Country</h1>
         <h6 className='header__subtitle'>Explore information about countries, capitals and flags. Add new countries and filter through the list!</h6>
         {/* <AddCountryForm onChange={handleName}/> */}
       </header>
@@ -75,6 +76,9 @@ function App() {
         />}
 
       </main>
+
+      <footer className='footer'>
+      </footer>
     </>
   );
 }
