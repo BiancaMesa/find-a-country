@@ -8,18 +8,50 @@ import dataCountries from '../services/data.json';
 import CountriesList from './CountriesList';
 import FilterByCountry from './FilterByCountry';
 import FilterByContinent from './FilterByContinent';
-//import AddCountryForm from './AddCountryForm';
+import AddCountryForm from './AddCountryForm';
 
 function App() {
   //VARIABLES DE ESTADO
   const [valueSearchCountry, setValueSearchCountry] = useState('');
   const [valueSearchContinent, setValueSearchContinent] = useState('');
-  //const [countries, setCountries] = useStates(dataCountries); //queremos que se inicialice la página con los datos de dataCountries
+  const [name, setName] = useState('');
+  const [capital, setCapital] = useState('');
+  const [flag, setFlag] = useState('');
+  const [continent, setContinent] = useState('');
+  const [countries, setCountries] = useState(dataCountries); //queremos que se inicialice la página con los datos de dataCountries
 
   //ADD NEW COUNTRY
-  // const handleName = (value) => {
-  //   setSearchCountry(value); 
-  // }
+  const handleName = (value) => {
+    setName(value); 
+  }; 
+
+  const handleCapital = (value) => {
+    setCapital(value); 
+  }; 
+
+  const handleFlag = (value) => {
+    setFlag(value); 
+  }; 
+
+  const handleContinent = (value) => {
+    setContinent(value); 
+  }; 
+
+  //muy importante que a la hora de general este objeto al array del objetos que sigamos la estructura que estabamos utilizando del API
+  const handleAddNewCountry = (event) => {
+    event.preventDefault(); 
+    
+    const newCountry = {
+      name: {official: name}, 
+      capital: [capital], 
+      flag: flag, 
+      continents: [continent], 
+    };
+
+    const newCountries = [...countries, newCountry]; //hacemos una copia de la variable de estado que contiene los datos con todos los paises y le incluimos el nuevo pais
+    setCountries(newCountries); 
+  };
+
 
   //FILTRAR POR PAIS
   const handleChangeInputCountry = (value) => {
@@ -54,13 +86,18 @@ function App() {
 
 
 
-
   return (
     <>
       <header className='header'>
         <h1 className='header__title'>Find a Country</h1>
         <h6 className='header__subtitle'>Explore information about countries, capitals and flags. Add new countries and filter through the list!</h6>
-        {/* <AddCountryForm onChange={handleName}/> */}
+        <AddCountryForm 
+          onChangeName={handleName} 
+          onChangeCapital={handleCapital} 
+          onChangeFlag={handleFlag} 
+          onChangeContinent={handleContinent} 
+          onSubmit={handleAddNewCountry}
+        />
       </header>
 
       <main className='main'>
