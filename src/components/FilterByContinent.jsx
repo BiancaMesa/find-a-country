@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 function FilterByContinent({onChangeSelectContinent}) {
 
     const handleSelectContinent = (event) => {
-        const valueSelectContinent = event.target.value; //verify this is correct
+        const valueSelectContinent = event.target.value; 
         onChangeSelectContinent(valueSelectContinent); 
     };
 

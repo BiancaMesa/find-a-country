@@ -7,7 +7,7 @@ function CountriesList({countriesM}) {
     <div className='countriesList'>
         {
             countriesM.map((country, index) => {
-               return <Country countriesD={country} key={index}/>
+               return <Country country={country} key={index}/>
             })
         }
     </div>

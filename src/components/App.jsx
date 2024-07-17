@@ -12,12 +12,15 @@ import AddCountryForm from './AddCountryForm';
 
 function App() {
   //VARIABLES DE ESTADO
+  //Variables estado filtros 
   const [valueSearchCountry, setValueSearchCountry] = useState('');
   const [valueSearchContinent, setValueSearchContinent] = useState('');
+  //Variables estado añadir nuevo país
   const [name, setName] = useState('');
   const [capital, setCapital] = useState('');
   const [flag, setFlag] = useState('');
   const [continent, setContinent] = useState('');
+  //Variable de estado de los datos 
   const [countries, setCountries] = useState(dataCountries); //queremos que se inicialice la página con los datos de dataCountries
 
   //ADD NEW COUNTRY
@@ -37,9 +40,11 @@ function App() {
     setContinent(value); 
   }; 
 
+  
+
   //muy importante que a la hora de general este objeto al array del objetos que sigamos la estructura que estabamos utilizando del API
-  const handleAddNewCountry = (event) => {
-    event.preventDefault(); 
+  const handleAddNewCountry = () => {
+    // event.preventDefault(); 
     
     const newCountry = {
       name: {official: name}, 
@@ -48,7 +53,8 @@ function App() {
       continents: [continent], 
     };
 
-    const newCountries = [...countries, newCountry]; //hacemos una copia de la variable de estado que contiene los datos con todos los paises y le incluimos el nuevo pais
+    //hacemos una copia de la variable de estado que contiene los datos con todos los paises y le incluimos el nuevo pais
+    const newCountries = [...countries, newCountry]; 
     setCountries(newCountries); 
   };
 
@@ -58,8 +64,8 @@ function App() {
     setValueSearchCountry(value);
   };
 
-  const filteredCountriesByCountry = dataCountries.filter((country) => {
-    return country.name.official.toLowerCase().includes(valueSearchCountry.toLowerCase()); //como me devuelve el pais si le estoy diciendo que me devuelva el nombre no? o es devuelveme el pais que cumpla con esta condicion??
+  const filteredCountriesByCountry = countries.filter((country) => {
+    return country.name.official.toLowerCase().includes(valueSearchCountry.toLowerCase()); //me devuelve los paises que cumplan con esta condición. Filter nos devuelve los countries que tengan como country.name.official lo que ha escrito el usuario. 
   });
 
 
@@ -69,17 +75,19 @@ function App() {
   };
 
   const filteredCountriesByContinent = filteredCountriesByCountry.filter((country) => {
-    return country.continents[0] === valueSearchContinent; 
+    //no ponemos include porque no es una palabra que ha escrito el usuario, sino el value de la opción que ha seleccionado el usuario 
+    return valueSearchContinent !== ""
+       ? country.continents[0] === valueSearchContinent
+        : true; 
   }); 
 
   //FILTRAR POR AMBOS
-   //Encadenamos filtros si hubiesemos puesto los dos filtros en el mismo componente 
   // const filteredCountries = dataCountries
   //   .filter((country) => {
   //     return country.name.official.toLowerCase().includes(valueSearchCountry.toLowerCase()); 
   //   })
   //   .filter((country) => {
-  //     return filteredCountries !== "All"
+  //     return valueSearchContinent !== ""
             // ? country.continents[0] === valueSearchContinent
             // : true; 
   //   }); 
